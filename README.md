@@ -83,6 +83,7 @@ Clone this repo to your own account with the green "Use this template" button. T
 - ### How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
   - talking it out and making sure we understand what each of us are doing. debriefs!
 
+  
 
 
 
