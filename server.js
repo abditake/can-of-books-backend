@@ -26,6 +26,9 @@ const app = express();
 // middleware
 app.use(cors());
 
+// must have this to recieve json from a request 
+app.use(express.json());
+
 // define PORT validate env is working
 const PORT = process.env.PORT || 3002;
 
@@ -35,9 +38,15 @@ app.get('/test',(req,res) =>{
 })
 
 app.get('/books', getBooks);
-
+// app.post('/books', postBooks);
+// app.delete('/books', deleteBooks);
 async function getBooks(req, res, next) {
+  // REST VERB: GET / MONGOOSE MODEL.find
   try {
+    const filterQuery={};
+    if(req.query.title){
+      filterQuery.title = req.query.title;
+    }
     let bookResults = await Books.find();
     res.status(200).send(bookResults);
   } catch (error) {
@@ -46,6 +55,30 @@ async function getBooks(req, res, next) {
 
 }
 
+// async function postBooks(req,res,next){
+//   // REST VERB: POST // MONGOOSE model.create()
+//   console.log(req.body);
+
+//   try{
+//     let createdBook = await Books.create(req.body);
+//   res.status(200).send(createdBook);  
+
+//   }catch(error){
+//     next(error)
+//   }
+// }
+
+// async function deleteBooks( req, res, next){
+//   // REST VERB delete / MONGOOSE model.findbyidandDElete()
+//   let id = req.params.id;
+//   try{
+//     console.log(id);
+//   await Books.findByIdAndDelete(id);
+//     res.send('book deleted');
+//   }catch(error){
+//     next(error)
+//   }
+// }
 
 // routes 
 app.get('/', (request, response) => {
