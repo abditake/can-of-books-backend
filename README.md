@@ -91,8 +91,8 @@ Clone this repo to your own account with the green "Use this template" button. T
 
 ### Estimate of time needed to complete: 1hr
 
-### Start time: 3:45pm
+### Start time: 10:00pm
 
-### Finish time: _____
+### Finish time: 11:10pm
 
-### Actual time needed to complete: _____
+### Actual time needed to complete: 1hr 10min
