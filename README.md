@@ -96,3 +96,13 @@ Clone this repo to your own account with the green "Use this template" button. T
 ### Finish time: 11:10pm
 
 ### Actual time needed to complete: 1hr 10min
+
+Name of feature: adding carousel + finishing lab 11
+
+Estimate of time needed to complete: 6
+
+Start time: 2:00pm
+
+Finish time: 5:50
+
+Actual time needed to complete: 3 hours 50mins 
