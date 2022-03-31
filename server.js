@@ -39,7 +39,7 @@ app.get('/test',(req,res) =>{
 
 app.get('/books', getBooks);
 app.post('/books', postBooks);
-app.delete('/books', deleteBooks);
+app.delete('/books/:id', deleteBooks);
 async function getBooks(req, res, next) {
   // REST VERB: GET / MONGOOSE MODEL.find
   try {
@@ -77,6 +77,17 @@ async function deleteBooks( req, res, next){
     res.send('book deleted');
   }catch(error){
     next(error)
+  }
+}
+
+async function putBook(req,res,next){
+  try{
+    let id = req.params.id;
+    // data about updated book is in req.body
+    let updatedBooks = await axios.findByIdAndUpdate(id,req.body,{new: true, overwrite:true});
+    res.status(200).send(updatedBooks);
+  }catch(error){
+    next(error);
   }
 }
 
